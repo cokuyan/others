@@ -1,0 +1,70 @@
+html, body, a, section, ul, li, img, main, figure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+li {
+  list-style: none;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  margin: auto;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.active {
+  width: 431px;
+  height: 431px;
+}
+
+.active img {
+  width: 100%;
+  width: inherit;
+  height: inherit;
+}
+
+.gutter-images {
+  position: relative;
+  left: 5%;
+  width: 90%;
+}
+
+.gutter-images img {
+  width: 20%;
+  display: block;
+  float: left;
+}
+
+main.thumbnails {
+  width: 400px;
+}
+
+section.gutter {
+  position: relative;
+}
+
+section :last-child {
+  left: 95%;
+}
+
+a.nav {
+  font-size: 25px;
+  display: block;
+  float: left;
+  position: absolute;
+  top: 10%;
+  -webkit-transform: translateY(50%);
+  width: 5%;
+}

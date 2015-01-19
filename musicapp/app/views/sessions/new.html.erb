@@ -1,0 +1,19 @@
+<%= render partial: 'layouts/errors' %>
+
+<h1>Sign in</h1>
+
+<form action="/session" method="POST">
+  <%= auth_token %>
+
+  <label>
+    Email
+    <input type="text" name="user[email]" value="<%= @user.email %>">
+  </label>
+
+  <label>
+    Password
+    <input type="password" name="user[password]">
+  </label>
+
+  <input type="submit" value="Sign in">
+</form>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ ＣＡＴ ＰＬＡＮＥＴ </title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag  "application", :media => "all" %>
+
+</head>
+<body>
+<% if !current_user.nil? %>
+  <header>
+    Logged in as: <%=current_user.user_name %><br>
+    <%= button_to "Logout", session_url, method: :delete %>
+  </header>
+<% elsif params[:controller] != "sessions" %>
+  <header>
+    <%= link_to "Log in!", new_session_url %> or <%= link_to "Sign up!", new_user_url %>
+  </header>
+<% end %>
+
+<%= flash[:notice] if flash[:notice] %>
+
+<%= yield %>
+
+<footer>
+  <%= link_to "home", home_url %>
+  <%= link_to "cats", cats_url %>
+  <%= link_to "user", user_url unless current_user.nil? %>
+</footer>
+
+</body>
+</html>

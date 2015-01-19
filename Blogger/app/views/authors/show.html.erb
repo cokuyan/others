@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @author.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @author.email %>
+</p>
+
+<p>
+  Articles:
+  <ul>
+    <% @author.articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article) %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Practice</title>
+    <script src="./lib/shim.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <script charset="utf-8">
+      var x = 0;
+      function drawIt() {
+        window.requestAnimFrame(drawIt);
+        var canvas = document.getElementById('canvas');
+        var c = canvas.getContext('2d');
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.fillStyle = "red";
+        c.fillRect(x, 100, 200, 100);
+        x += 2;
+      };
+      window.requestAnimFrame(drawIt);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cool Website!</title>
+    <meta charset="UTF-8">
+    <script src="./jquery-2.1.1.js"></script>
+    <script src="./tabs.js"></script>
+    <link href="./tabs.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <ul class="tabs" data-content-tabs="#content-tabs">
+      <li><a href="#shiba-inu" class="active">Shiba Inu</a></li>
+      <li><a href="#pembroke-welsh-corgi">Pembroke Welsh Corgi</a></li>
+      <li><a href="#afghan-hound">Afghan Hound</a></li>
+      <li><a href="#komondor">Komondor</a></li>
+    </ul>
+
+    <section id="content-tabs">
+
+      <article id="shiba-inu" class="tab-pane active">
+        <p>
+          The Shiba Inu (柴犬) is the smallest of the six original and distinct spitz breeds of dog from Japan.[1]
+
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.[1][2] It looks similar to and is often mistaken for other Japanese dog breeds like the Akita Inu or Hokkaido, but the Shiba Inu is a different breed with a distinct blood line, temperament and smaller size than other Japanese dog breeds.[3][4] It is one of the few ancient dog breeds still in existence in the world today.[5]
+        </p>
+      </article>
+      <article id="pembroke-welsh-corgi" class="tab-pane">
+        <p>
+          The Pembroke Welsh Corgi (/ˈkɔrɡi/; Welsh for "dwarf dog"), is a herding dog breed, which originated in Pembrokeshire, Wales.[1] It is one of two breeds known as Welsh Corgi: the other is the Cardigan Welsh Corgi. The Pembroke Welsh Corgi is the younger of the two Corgi breeds and is a separate and distinct breed[2] from the Cardigan.[1] The corgi is one of the smallest dogs in the Herding Group. Pembroke Welsh Corgis are famed for being the preferred breed of Queen Elizabeth II, who has owned more than 30 during her reign.[3] These dogs have been favoured by British royalty for more than seventy years.
+
+          The Pembroke Welsh Corgi has been ranked at #11 in Stanley Coren's The Intelligence of Dogs, and is thus considered an excellent working dog. The Pembroke Welsh Corgi was ranked as the 25th most popular dog in 2011.[4]
+        </p>
+      </article>
+      <article id="afghan-hound" class="tab-pane">
+        <p>
+          The Afghan Hound is a hound that is one of the oldest dog breeds in existence. Distinguished by its thick, fine, silky coat and its tail with a ring curl at the end, the breed acquired its unique features in the cold mountains of Afghanistan. Its local name is Tāžī Spay (Pashto: تاژي سپی‎) or Sag-e Tāzī (Dari Persian: سگ تازی). Other alternate names for this breed are Kuchi Hound, Tāzī, Balkh Hound, Baluchi Hound, Barutzy Hound, Shalgar Hound, Kabul Hound, Galanday Hound, or sometimes incorrectly African Hound.
+        </p>
+      </article>
+      <article id="komondor" class="tab-pane">
+        <p>
+          The Komondor (in Hungarian the plural for komondor is komondorok, not used in English[1]) is a large, white-coloured Hungarian breed of livestock guardian dog with a long, corded coat.
+
+          Sometimes referred to as 'mop dogs,' the Komondor is a long-established[2] powerful dog breed that has a natural guardian instinct to guard livestock and other property. The Komondor was brought to Europe by the Cumans[3] and it was mentioned for the first time in 1544 in a Hungarian codex.[2] The Komondor breed has been declared one of Hungary’s national treasures, to be preserved and protected from modification.[4]
+        </p>
+      </article>
+    </section>
+
+    <script charset="utf-8">
+      $(function () {
+        $('.tabs').tabs();
+      })
+    </script>
+  </body>
+</html>

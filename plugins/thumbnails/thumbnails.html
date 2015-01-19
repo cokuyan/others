@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pokenails</title>
+    <link rel="stylesheet" href="./thumbnails.css" media="screen" title="no title" charset="utf-8">
+    <script src="./jquery-2.1.1.js"></script>
+    <script src="./thumbnails.js"></script>
+  </head>
+  <body>
+    <main class="thumbnails">
+      <figure class="active"></figure>
+
+      <section class="gutter">
+        <a href="#" class="nav" id="left">&lt;</a>
+
+        <ul class="gutter-images group">
+          <li><img src="./pokemon/141Kabutops.png" /></li>
+          <li><img src="./pokemon/143Snorlax.png" /></li>
+          <li><img src="./pokemon/357Tropius.png" /></li>
+          <li><img src="./pokemon/600px-194Wooper.png" /></li>
+          <li><img src="./pokemon/600px-197Umbreon.png" /></li>
+          <li><img src="./pokemon/600px-206Dunsparce.png" /></li>
+          <li><img src="./pokemon/039Jigglypuff.png" /></li>
+          <li><img src="./pokemon/048Venonat.png" /></li>
+          <li><img src="./pokemon/083Farfetch'd.png" /></li>
+          <li><img src="./pokemon/109Koffing.png" /></li>
+          <li><img src="./pokemon/113Chansey.png" /></li>
+          <li><img src="./pokemon/129Magikarp.png" /></li>
+          <li><img src="./pokemon/132Ditto.png" /></li>
+          <li><img src="./pokemon/137Porygon.png" /></li>
+          <li><img src="./pokemon/149Dragonite.png" /></li>
+          <li><img src="./pokemon/183Marill.png" /></li>
+          <li><img src="./pokemon/185Sudowoodo.png" /></li>
+          <li><img src="./pokemon/370Luvdisc.png" /></li>
+          <li><img src="./pokemon/584Vanilluxe.png" /></li>
+          <li><img src="./pokemon/Missingno_RB.png" /></li>
+        </ul>
+
+        <a href="#" class="nav" id="right">&gt;</a>
+      </section>
+    </main>
+    <script charset="utf-8">
+      $(function () {
+        $('.thumbnails').thumbnails();
+      })
+    </script>
+  </body>
+</html>

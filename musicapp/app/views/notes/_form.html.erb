@@ -1,0 +1,15 @@
+<h3>Add Note</h3>
+
+<%= render partial: 'layouts/errors' %>
+
+<form action="/notes" method="POST">
+  <%= auth_token %>
+
+  <label>
+    <textarea name="note[body]"></textarea>
+  </label><br>
+
+  <input type="hidden" name="note[track_id]" value="<%= track.id %>">
+
+  <input type="submit" value="Add Note">
+</form>

@@ -1,0 +1,7 @@
+<h1>Welcome to Cat Planet</h1>
+
+<% unless request.remote_ip == "127.0.0.1" %>
+<marquee direction='up'><marquee>sup hackers</marquee></marquee>
+<% end %>
+
+<%= link_to "Cats", cats_url %>

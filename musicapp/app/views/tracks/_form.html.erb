@@ -1,0 +1,50 @@
+<%= render partial: 'layouts/errors' %>
+
+<% if track.persisted? %>
+  <% form_action = track_url(track) %>
+  <% submit_value = "Edit #{track.title}" %>
+<% else %>
+  <% form_action = "/tracks" %>
+  <% submit_value = "Add Track" %>
+<% end %>
+
+<form action="<%= form_action %>" method="POST">
+  <%= auth_token %>
+
+  <% if track.persisted? %>
+    <input type="hidden" name="_method" value="PATCH"
+  <% end %>
+
+  <label>
+    Track Title
+    <input type="text" name="track[title]" value="<%= track.title %>">
+  </label><br>
+
+  <label>
+    Album
+    <select name="track[album_id]">
+      <% Album.all.each do |other_album| %>
+        <option value="<%= album.id %>"
+          <%= "selected" if album == other_album %>><%= other_album.title %></option>
+      <% end %>
+      </select>
+    </label><br>
+
+    <label>Kind</label>
+    <% Track::KINDS.each do |kind| %>
+    <label>
+      <input type="radio"
+             name="track[kind]"
+             value="<%= kind %>"
+             <%= "checked" if track.kind == kind %>>
+      <%= kind %>
+    </label>
+    <% end %><br>
+
+    <label>
+      Lyrics
+      <textarea name="track[lyrics]"><%= track.lyrics %></textarea>
+    </label><br>
+
+    <input type="submit" value="<%= submit_value %>">
+  </form>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to musicapp.com, <%= @user.email %></h1>
+    <p>
+      You have successfully signed up to musicapp.com<br>
+    </p>
+    <p>
+      Before you can start using the site, please activate your email by clicking
+      <%= link_to "here", @url %>
+      or copying and pasting the following link into your browser:
+      <%= @url %>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

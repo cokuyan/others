@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Particles</title>
+    <script src="./lib/shim.js"></script>
+    <script src="./lib/particle.js"></script>
+    <script src="./lib/particles.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script charset="utf-8">
+      var canvas = document.getElementById('canvas');
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      window.ctx = canvas.getContext('2d');
+
+      window.requestAnimFrame(Particles.run);
+    </script>
+  </body>
+</html>

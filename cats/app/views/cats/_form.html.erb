@@ -1,0 +1,61 @@
+
+<% action_url = cat.persisted? ? cat_url(cat) : cats_url %>
+<% action_value = cat.persisted? ? "Edit" : "Build" %>
+
+<form action="<%= action_url %>" method="POST">
+  <% if cat.persisted? %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <p>
+    <label for="cat_name">Name</label><br>
+    <input type="text" name="cat[name]" id="cat_name" value="<%=cat.name%>">
+  </p>
+
+  <p>
+    <label for="cat_birth_date">Birth Date</label>
+    <input name="cat[birth_date]" id="cat_birth_date" type="date" value="<%=cat.birth_date%>">
+  </p>
+
+  <p>
+    <label>Color</label>
+    <div>
+      <% Cat::COLORS.each do |color| %>
+        <input type="radio"
+          name="cat[color]"
+          id="cat_color_<%=color%>"
+          value="<%= color %>"
+          <%= "checked" if cat.color == color %>>
+        <label for="cat_color_<%=color%>"><%=color.capitalize%></label><br>
+      <% end %>
+    </div>
+  </p>
+
+  <p>
+    <label>Sex</label>
+    <div>
+      <input name="cat[sex]"
+        id="cat_sex_m"
+        type="radio"
+        value="M"
+        <%= "checked" if cat.sex == "M" %>>
+      <label for="cat_sex_m">Male</label>
+
+      <input name="cat[sex]"
+        id="cat_sex_f"
+        type="radio"
+        value="F"
+        <%= "checked" if cat.sex == "F" %>>
+        <label for="cat_sex_f">Female</label>
+    </div>
+  </p>
+
+  <p>
+    <label for="cat_description">Description</label><br>
+    <textarea name="cat[description]" id="cat_description"><%=cat.description%></textarea>
+  </p>
+
+  <input type="submit" value="<%= action_value %> my cat, Dr. Frankenstein!">
+</form>

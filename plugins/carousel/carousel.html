@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Corgi Carousel</title>
+    <script src="./jquery-2.1.1.js"></script>
+    <script src="./carousel.js"></script>
+    <link href="./carousel.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <main class="carousel">
+      <ul class="items">
+        <li class="active"><img src="./corgis/corgi1.jpeg" /></li>
+        <li><img src="./corgis/corgi2.jpeg" /></li>
+        <li><img src="./corgis/corgi3.jpeg" /></li>
+        <li><img src="./corgis/corgi4.jpeg" /></li>
+      </ul>
+
+
+      <a href="javascript:void(0)" class="slide-right">Prev</a>
+      <a href="javascript:void(0)" class="slide-left">Next</a>
+
+
+    </main>
+
+    <script charset="utf-8">
+    $(function () {
+      $('.items').carousel();
+    })
+    </script>
+  </body>
+</html>

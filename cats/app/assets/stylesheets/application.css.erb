@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*@font-face {
+  font-family: kaisg;
+  src: local(kaisg), url('<%= asset_path('kaisg.ttf') %>') format('truetype');
+}
+
+body {
+  font-family: kaisg;
+  font-size: 24pt;
+}
+
+input, button, select, option, textarea {
+  font-family: kaisg;
+  font-size: 18pt;
+}*/
+
+header {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  z-index: 0;
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 2%;
+  z-index: 0;
+  left: 2%;
+  right: 2%;
+}

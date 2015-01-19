@@ -1,0 +1,59 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+  <tr>
+    <th>Owner</th>
+    <td><%= @cat.owner.user_name %></td>
+  </tr>
+
+  <tr>
+    <th>Birthdate</th>
+    <td><%= @cat.birth_date %></td>
+  </tr>
+
+  <tr>
+    <th>Age</th>
+    <td><%= @cat.age %></td>
+  </tr>
+
+  <tr>
+    <th>Color</th>
+    <td><%= @cat.color %></td>
+  </tr>
+
+  <tr>
+    <th>Sex</th>
+    <td><%= @cat.sex %></td>
+  </tr>
+
+  <tr>
+    <th>Description</th>
+    <td><%=@cat.description%></td>
+  </tr>
+</table>
+
+<ul>
+  <% CatRentalRequest.all_approved(@cat.id).each do |request| %>
+    <li>From <%=request.start_date%> to <%=request.end_date%></li>
+  <% end %>
+</ul>
+
+<% if @cat.owner == current_user %>
+
+<ul>
+  <% CatRentalRequest.all_pending(@cat.id).each do |request| %>
+    <li><%= button_to "Approve", approve_url(request), method: :patch %>
+        <%= button_to "Deny", deny_url(request), method: :patch %>
+        Start: <%= request.start_date %> <br>
+        End: <%= request.end_date %></li>
+  <% end %>
+</ul>
+
+  <%= link_to "Edit", edit_cat_url(@cat) %>
+  <%= button_to "Delete", cat_url(@cat), method: :delete %>
+
+<% else %>
+
+  <%= link_to "Create new request", new_cat_rental_request_url %>
+
+<% end %>

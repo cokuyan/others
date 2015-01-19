@@ -1,0 +1,45 @@
+<%= render partial: 'layouts/errors' %>
+
+<% if album.persisted? %>
+  <% form_action = album_url(album) %>
+  <% submit_value = "Edit #{album.title}" %>
+<% else %>
+  <% form_action = "/albums" %>
+  <% submit_value = "Add Album" %>
+<% end %>
+
+<form action="<%= form_action %>" method="POST">
+  <%= auth_token %>
+
+  <% if album.persisted? %>
+    <input type="hidden" name="_method" value="PATCH"
+  <% end %>
+
+  <label>
+    Album Title
+    <input type="text" name="album[title]" value="<%= album.title %>">
+  </label><br>
+
+  <label>
+    Band
+    <select name="album[band_id]">
+      <% Band.all.each do |other_band| %>
+        <option value="<%= band.id %>"
+          <%= "selected" if band == other_band %>><%= other_band.name %></option>
+      <% end %>
+    </select>
+  </label><br>
+
+  <label>Kind</label>
+  <% Album::KINDS.each do |kind| %>
+    <label>
+      <input type="radio"
+             name="album[kind]"
+             value="<%= kind %>"
+             <%= "checked" if album.kind == kind %>>
+      <%= kind %>
+    </label>
+  <% end %><br>
+
+  <input type="submit" value="<%= submit_value %>">
+</form>
