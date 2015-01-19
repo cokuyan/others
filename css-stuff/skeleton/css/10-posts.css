@@ -1,0 +1,45 @@
+/* PHASE 10: Posts */
+ul.posts {
+  clear: both;
+}
+
+li.post {
+  position: relative;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+article.post-content {
+  position: absolute;
+  left: 80px;
+}
+
+article.post-content h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 21px;
+}
+
+article.post-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.post-info {
+  float: left;
+}
+
+.post-info li {
+  float: left;
+  color: #888;
+}
+
+.post-nav {
+  float: right;
+}
+
+.post-nav li {
+  font-size: 16px;
+  float: left;
+}
